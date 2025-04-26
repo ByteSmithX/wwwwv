@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dallas College - Premier institution offering quality education, career-focused programs, and student support services in Dallas, Texas.">
+    <meta name="keywords" content="Dallas College, higher education, community college, Texas colleges, degree programs, online learning">
+    <meta name="author" content="Dallas College">
+    <meta property="og:title" content="Dallas College - Quality Education in Texas">
+    <meta property="og:description" content="Explore career-focused programs at Dallas College. Affordable tuition, flexible schedules, and excellent student support.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.dallascollege.edu">
+    <title>Dallas College | Quality Higher Education in Texas</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #003366;
+            --secondary-color: #E57200;
+            --accent-color: #43B02A;
+            --light-color: #F5F5F5;
+            --dark-color: #333333;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand img {
+            height: 50px;
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            margin: 0 0.2rem;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            padding: 0.5rem 1.5rem;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            background-color: #cc6200;
+            border-color: #cc6200;
+        }
+        
+        .btn-outline-primary {
+            color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            position: relative;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+        }
+        
+        .feature-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .program-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            height: 100%;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .program-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .stats-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        .news-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            height: 100%;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .news-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .news-date {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-right: 1rem;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-links h5 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            margin-top: 40px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-section {
+                padding: 80px 0;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://www.dallascollege.edu/publishingimages/logo-white.svg" alt="Dallas College Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#programs">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#admissions">Admissions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#news">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="ms-lg-3 mt-3 mt-lg-0">
+                    <a href="#apply" class="btn btn-primary">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="hero-title">Transform Your Future at Dallas College</h1>
+                    <p class="hero-subtitle">Quality education, affordable tuition, and career-focused programs designed to help you succeed in today's competitive job market.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#programs" class="btn btn-primary btn-lg">Explore Programs</a>
+                        <a href="#admissions" class="btn btn-outline-light btn-lg">Admissions Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card p-4 text-center">
+                        <i class="fas fa-graduation-cap feature-icon"></i>
+                        <h3>100+ Programs</h3>
+                        <p>Choose from associate degrees, certificates, and workforce training programs across diverse fields of study.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card p-4 text-center">
+                        <i class="fas fa-dollar-sign feature-icon"></i>
+                        <h3>Affordable Tuition</h3>
+                        <p>One of the most affordable higher education options in Texas, with financial aid and scholarship opportunities.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card p-4 text-center">
+                        <i class="fas fa-briefcase feature-icon"></i>
+                        <h3>Career Services</h3>
+                        <p>Dedicated career counseling, internship opportunities, and job placement assistance for all students.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5" id="about">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title">About Dallas College</h2>
+                    <p>Dallas College is a premier community college serving the Dallas County area with seven campuses across the metroplex. Founded in 1965, we have grown to become one of the largest community college systems in Texas.</p>
+                    <p>Our mission is to provide high-quality, affordable education that prepares students for successful careers and transfer to four-year institutions. We serve over 80,000 students annually through credit and continuing education programs.</p>
+                    <p>Dallas College is accredited by the Southern Association of Colleges and Schools Commission on Colleges (SACSCOC) to award associate degrees and certificates.</p>
+                    <a href="#" class="btn btn-primary mt-3">Learn More About Us</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Dallas College Students" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="py-5 bg-light" id="programs">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Our Academic Programs</h2>
+                <p class="lead">Choose from over 100 degree and certificate programs across seven schools of study</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="program-card">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="card-img-top" alt="Business Program">
+                        <div class="card-body">
+                            <h5 class="card-title">Business & Technology</h5>
+                            <p class="card-text">Accounting, Business Administration, Computer Science, Cybersecurity, and more.</p>
+                            <a href="#" class="btn btn-outline-primary">Explore Programs</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="program-card">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="card-img-top" alt="Health Sciences Program">
+                        <div class="card-body">
+                            <h5 class="card-title">Health Sciences</h5>
+                            <p class="card-text">Nursing, Dental Hygiene, Radiology, Respiratory Care, and other healthcare fields.</p>
+                            <a href="#" class="btn btn-outline-primary">Explore Programs</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="program-card">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1422&q=80" class="card-img-top" alt="STEM Program">
+                        <div class="card-body">
+                            <h5 class="card-title">STEM Fields</h5>
+                            <p class="card-text">Engineering, Mathematics, Biology, Chemistry, Physics, and other sciences.</p>
+                            <a href="#" class="btn btn-outline-primary">Explore Programs</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="program-card">
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="card-img-top" alt="Arts Program">
+                        <div class="card-body">
+                            <h5 class="card-title">Arts & Humanities</h5>
+                            <p class="card-text">Visual Arts, Music, Theater, Communication, Languages, and Philosophy.</p>
+                            <a href="#" class="btn btn-outline-primary">Explore Programs</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="program-card">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" class="card-img-top" alt="Education Program">
+                        <div class="card-body">
+                            <h5 class="card-title">Education</h5>
+                            <p class="card-text">Early Childhood Education, Teacher Certification, and Educational Studies.</p>
+                            <a href="#" class="btn btn-outline-primary">Explore Programs</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="program-card">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="card-img-top" alt="Workforce Program">
+                        <div class="card-body">
+                            <h5 class="card-title">Workforce & Continuing Ed</h5>
+                            <p class="card-text">Short-term training programs for immediate employment in high-demand fields.</p>
+                            <a href="#" class="btn btn-outline-primary">Explore Programs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-primary btn-lg">View All Programs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <div class="stat-number">85,000+</div>
+                    <h4>Students Enrolled</h4>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <div class="stat-number">100+</div>
+                    <h4>Degree Programs</h4>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <div class="stat-number">7</div>
+                    <h4>Campus Locations</h4>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-number">90%</div>
+                    <h4>Graduate Satisfaction</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admissions Section -->
+    <section class="py-5" id="admissions">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Dallas College Admissions" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title">Admissions Process</h2>
+                    <p>Applying to Dallas College is simple and straightforward. We have an open admissions policy for most programs, welcoming all students who are ready to pursue higher education.</p>
+                    <div class="accordion" id="admissionsAccordion">
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h3 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Step 1: Complete Application
+                                </button>
+                            </h3>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#admissionsAccordion">
+                                <div class="accordion-body">
+                                    Submit your free online application through our website. You'll need to provide basic personal information and your educational background.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h3 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Step 2: Submit Documents
+                                </button>
+                            </h3>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#admissionsAccordion">
+                                <div class="accordion-body">
+                                    Provide official high school transcripts or GED scores. If you have previous college credits, submit those transcripts for evaluation.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h3 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Step 3: Apply for Financial Aid
+                                </button>
+                            </h3>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#admissionsAccordion">
+                                <div class="accordion-body">
+                                    Complete the FAFSA to determine your eligibility for grants, loans, and work-study programs. Dallas College's school code is 016792.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0 shadow-sm">
+                            <h3 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    Step 4: Register for Classes
+                                </button>
+                            </h3>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#admissionsAccordion">
+                                <div class="accordion-body">
+                                    Meet with an academic advisor to select your courses and register for classes. New student orientation is available to help you get started.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <a href="#apply" class="btn btn-primary me-3">Apply Now</a>
+                        <a href="#" class="btn btn-outline-primary">Request Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Success Stories</h2>
+                <p class="lead">Hear from our students and alumni about their Dallas College experience</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Dallas College gave me the skills and confidence to start my own business. The entrepreneurship program was exactly what I needed to turn my idea into reality."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Student" class="rounded-circle me-3" width="60">
+                            <div>
+                                <p class="testimonial-author mb-0">Maria Gonzalez</p>
+                                <small>Business Administration, 2022</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"The nursing program at Dallas College prepared me exceptionally well for my career. I had multiple job offers before I even graduated!"</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Student" class="rounded-circle me-3" width="60">
+                            <div>
+                                <p class="testimonial-author mb-0">James Wilson</p>
+                                <small>Nursing, 2021</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Thanks to Dallas College's transfer agreements, I was able to seamlessly continue my education at a four-year university and save thousands in tuition."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Student" class="rounded-circle me-3" width="60">
+                            <div>
+                                <p class="testimonial-author mb-0">Sarah Johnson</p>
+                                <small>Computer Science, 2020</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="py-5" id="news">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Latest News & Events</h2>
+                <p class="lead">Stay updated with what's happening at Dallas College</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="news-card">
+                        <img src="https://images.unsplash.com/photo-1524179091875-bf99a9a6af57?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="card-img-top" alt="News Image">
+                        <div class="card-body">
+                            <span class="news-date">June 15, 2025</span>
+                            <h5 class="card-title mt-2">Dallas College Ranked #1 in Texas</h5>
+                            <p class="card-text">Dallas College has been named the top community college in Texas by the Community College Review for 2025.</p>
+                            <a href="#" class="btn btn-link ps-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="news-card">
+                        <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" class="card-img-top" alt="News Image">
+                        <div class="card-body">
+                            <span class="news-date">June 8, 2025</span>
+                            <h5 class="card-title mt-2">New STEM Building Grand Opening</h5>
+                            <p class="card-text">Join us for the ribbon-cutting ceremony of our state-of-the-art STEM facility on July 10th.</p>
+                            <a href="#" class="btn btn-link ps-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="news-card">
+                        <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" class="card-img-top" alt="News Image">
+                        <div class="card-body">
+                            <span class="news-date">May 30, 2025</span>
+                            <h5 class="card-title mt-2">Summer Registration Now Open</h5>
+                            <p class="card-text">Enroll now for summer sessions with flexible online and in-person course options.</p>
+                            <a href="#" class="btn btn-link ps-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-primary">View All News</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apply Section -->
+    <section class="py-5 bg-primary text-white" id="apply">
+        <div class="container py-5 text-center">
+            <h2 class="mb-4">Ready to Start Your Journey?</h2>
+            <p class="lead mb-5">Join thousands of students who have transformed their lives through education at Dallas College.</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="#" class="btn btn-light btn-lg">Apply Now</a>
+                <a href="#" class="btn btn-outline-light btn-lg">Take a Campus Tour</a>
+                <a href="#" class="btn btn-outline-light btn-lg">Contact Admissions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5" id="contact">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h2 class="section-title">Contact Us</h2>
+                    <p class="mb-4">Have questions or need more information? Our team is here to help you with any inquiries about programs, admissions, financial aid, and more.</p>
+                    
+                    <div class="contact-info">
+                        <div class="d-flex mb-4">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <div>
+                                <h5>Main Campus</h5>
+                                <p>1601 Botham Jean Blvd, Dallas, TX 75215</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <i class="fas fa-phone-alt contact-icon"></i>
+                            <div>
+                                <h5>Phone</h5>
+                                <p>(972) 669-6400</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-4">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <div>
+                                <h5>Email</h5>
+                                <p>info@dallascollege.edu</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <i class="fas fa-clock contact-icon"></i>
+                            <div>
+                                <h5>Office Hours</h5>
+                                <p>Monday-Friday: 8:00 AM - 5:00 PM<br>Saturday: 9:00 AM - 1:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body p-4">
+                            <h3 class="mb-4">Send Us a Message</h3>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <input type="text" class="form-control" id="subject" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3356.091292035899!2d-96.7689159240504!3d32.7448988736335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e991f6b9a9a9b%3A0x8a6a5e5e5e5e5e5e!2sDallas%20College!5e0!3m2!1sen!2sus!4v1685487654321!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <img src="https://www.dallascollege.edu/publishingimages/logo-white.svg" alt="Dallas College Logo" class="mb-4" width="180">
+                    <p>Dallas College transforms lives and communities through higher education. We are committed to student success, academic excellence, and workforce development.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2 mb-4 mb-md-0 footer-links">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Academics</a></li>
+                        <li><a href="#">Admissions</a></li>
+                        <li><a href="#">Financial Aid</a></li>
+                        <li><a href="#">Student Services</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-2 mb-4 mb-md-0 footer-links">
+                    <h5>Resources</h5>
+                    <ul>
+                        <li><a href="#">Library</a></li>
+                        <li><a href="#">Calendar</a></li>
+                        <li><a href="#">Directory</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Bookstore</a></li>
+                        <li><a href="#">Alumni</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-4 footer-links">
+                    <h5>Campus Locations</h5>
+                    <ul>
+                        <li><a href="#">Brookhaven Campus</a></li>
+                        <li><a href="#">Cedar Valley Campus</a></li>
+                        <li><a href="#">Eastfield Campus</a></li>
+                        <li><a href="#">El Centro Campus</a></li>
+                        <li><a href="#">Mountain View Campus</a></li>
+                        <li><a href="#">North Lake Campus</a></li>
+                        <li><a href="#">Richland Campus</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright text-center">
+                <p class="mb-0">&copy; 2025 Dallas College. All Rights Reserved. <a href="#" class="text-white">Privacy Policy</a> | <a href="#" class="text-white">Terms of Use</a> | <a href="#" class="text-white">Accessibility</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
+            } else {
+                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
